@@ -15,9 +15,28 @@ const bodyFont = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Mente Binaria | Sistemas para Oficinas",
-  description:
-    "Landing page de vendas para apresentar sistemas, captar leads e centralizar produtos da Mente Binaria.",
+  title: "Mente Binária | Soluções Inteligentes para sua Oficina",
+  description: "O sistema em nuvem mais completo para Auto Elétricas e Oficinas Automotivas. O.S. com fotos, emissão de notas e Portal do Cliente.",
+  icons: {
+    icon: "/mentebinariabrain.png",
+    apple: "/mentebinariabrain.png",
+  },
+  openGraph: {
+    title: "Mente Binária | Hub de Soluções Digitais",
+    description: "Sua oficina gerenciada de forma brilhante. Conheça o MBRepair.",
+    url: "https://mentebinaria.com",
+    siteName: "Mente Binária",
+    images: [
+      {
+        url: "/mentebinaria.png",
+        width: 1200,
+        height: 630,
+        alt: "Mente Binária - MBRepair",
+      },
+    ],
+    locale: "pt_BR",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
