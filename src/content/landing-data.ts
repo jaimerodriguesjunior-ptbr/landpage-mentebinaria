@@ -15,6 +15,14 @@ export type OtherProduct = {
   url: string;
 };
 
+export type Testimonial = {
+  id: string;
+  name: string;
+  role: string;
+  content: string;
+  avatar?: string;
+};
+
 export const mainFeatures: Feature[] = [
   {
     id: "login",
@@ -107,4 +115,25 @@ export const screenshotSlots = [
     caption: "O cliente acompanha o passo a passo do veículo na oficina.",
     imageDefault: "/autoeletrica/passo a passo cliente.mp4"
   }
+];
+
+export const testimonials: Testimonial[] = [
+  {
+    id: "norberto",
+    name: "Norberto Tajiri",
+    role: "Proprietário da NHT Centro Automotivo - Guaíra",
+    content: "Diferente de outros programas, o MBRepair é extremamente estável. E se surge qualquer dúvida, o suporte é imediato. Estou muito satisfeito com a confiança que o sistema passa.",
+  },
+  {
+    id: "paulinho",
+    name: "Paulinho",
+    role: "Proprietário da Rally Auto-Center - Guaíra",
+    content: "O Portal do Cliente resolveu minha maior dor de cabeça: a garantia de peças de terceiros. Agora eu envio o link pelo WhatsApp e o cliente autoriza tudo pelo portal, sendo informado juridicamente no ato. Isso nos traz uma tranquilidade enorme.",
+  },
+  {
+    id: "delson",
+    name: "Delson Kabroski",
+    role: "Proprietário da Dom Centro Automotivo - Toledo",
+    content: "Acredito que este seja o melhor sistema de gestão de oficinas da nossa região. Conseguiram unir simplicidade com ferramentas poderosas. É o equilíbrio perfeito para o dia a dia.",
+  },
 ];

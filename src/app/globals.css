@@ -249,6 +249,18 @@ a {
   justify-content: center;
 }
 
+.product-intro-visual {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+}
+
+.small-mockup {
+  max-width: 500px;
+  transform: none; /* Removemos a rotação no meio da página para ficar mais limpo */
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
 .mockup-video {
   width: 100%;
   height: 100%;
@@ -292,6 +304,20 @@ a {
   font-size: 1.1rem;
   max-width: 600px;
   margin: 0 auto;
+}
+
+.product-flagship-badge {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid var(--brand);
+  color: var(--brand);
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
 }
 
 .bento-grid {
@@ -616,6 +642,161 @@ a {
   box-shadow: 0 15px 40px rgba(14, 165, 233, 0.5);
   opacity: 1;
 }
+.btn-secondary-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem 1.8rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text-primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.btn-secondary-outline:hover {
+  border-color: var(--brand);
+  background: rgba(14, 165, 233, 0.05);
+  transform: translateX(5px);
+}
+
+/* Hub Styles */
+.center-content {
+  text-align: center;
+  justify-content: center;
+  min-height: 70vh;
+}
+
+.full-width {
+  max-width: 900px !important;
+}
+
+.products-hub-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+@media (max-width: 1000px) {
+  .products-hub-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hub-product-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hub-product-card.featured {
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(0,0,0,0) 100%);
+  border-color: var(--brand);
+}
+
+.hub-product-card h3 {
+  font-size: 2rem;
+  margin: 1.5rem 0 1rem;
+  color: #fff;
+}
+
+.hub-product-card p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.hub-card-icon {
+  color: var(--brand);
+}
+
+.learn-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--brand);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.hub-card-visual {
+  position: absolute;
+  right: -50px;
+  bottom: -50px;
+  width: 300px;
+  height: 300px;
+  opacity: 0.2;
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+.hub-video-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.side-products-stack {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 2rem;
+}
+
+.hub-product-card.secondary {
+  padding: 2rem;
+}
+
+.hub-product-card.secondary h3 {
+  font-size: 1.5rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.hub-product-card.secondary p {
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.badge-soon {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  padding: 0.3rem 0.8rem;
+  border-radius: 99px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  width: fit-content;
+}
+
+.nav-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  margin-right: 2rem;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--brand);
+}
+
+@media (max-width: 768px) {
+  .hidden-mobile {
+    display: none;
+  }
+}
+
 
 /* Footer */
 .footer-bar {
@@ -624,4 +805,175 @@ a {
   border-top: 1px solid var(--border);
   color: var(--text-muted);
   font-size: 0.9rem;
+}
+/* Testimonials Section */
+.testimonials-section {
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-badge {
+  color: var(--brand);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+@media (max-width: 900px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.testimonial-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 2.5rem;
+  border-radius: 20px;
+  position: relative;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-card:hover {
+  border-color: rgba(56, 189, 248, 0.3);
+  transform: translateY(-5px);
+  background: var(--surface-hover);
+}
+
+.quote-icon-wrapper {
+  color: var(--brand);
+  opacity: 0.2;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-content {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+  font-style: italic;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.author-info strong {
+  display: block;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.author-info span {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+/* Philosophy Section */
+.philosophy-section {
+  padding: 8rem 2rem;
+  background: rgba(15, 15, 19, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.philosophy-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .philosophy-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3rem;
+  }
+}
+
+.philosophy-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.philosophy-video {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 50%;
+  mix-blend-mode: lighten;
+  filter: drop-shadow(0 0 30px rgba(56, 189, 248, 0.3));
+}
+
+.philosophy-glow {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%);
+  z-index: -1;
+  filter: blur(40px);
+}
+
+.philosophy-badge {
+  color: var(--brand);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.philosophy-text h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  line-height: 1.1;
+  color: #fff;
+}
+
+.philosophy-text p {
+  color: var(--text-secondary);
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.philosophy-highlight {
+  font-size: 1.3rem !important;
+  color: var(--text-primary) !important;
+  font-weight: 500;
+  border-left: 3px solid var(--brand);
+  padding-left: 2rem;
+}
+
+@media (max-width: 600px) {
+  .philosophy-text h2 {
+    font-size: 2.2rem;
+  }
+  .philosophy-highlight {
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid var(--brand);
+    padding-top: 1.5rem;
+  }
 }
