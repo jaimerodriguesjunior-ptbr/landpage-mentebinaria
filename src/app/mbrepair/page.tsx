@@ -144,6 +144,58 @@ export default function MBRepairPage() {
            </div>
 
            <p>Esqueça os sistemas travados. O Mente Binária Repair conecta celular, nota fiscal e gestão financeira em um só lugar.</p>
+
+           <motion.ul 
+             initial="hidden"
+             whileInView="visible"
+             viewport={{ once: true, margin: "-50px" }}
+             variants={{
+               visible: { transition: { staggerChildren: 0.15 } },
+               hidden: {}
+             }}
+             style={{ display: "flex", flexDirection: "column", gap: "1.2rem", textAlign: "left", listStyle: "none", padding: 0, maxWidth: "650px", margin: "2.5rem auto 0" }}
+           >
+             <motion.li 
+               variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0 } }}
+               transition={{ duration: 0.5 }}
+               style={{ display: "flex", alignItems: "flex-start", gap: "1rem" }}
+             >
+               <Camera size={24} className="card-icon" style={{ flexShrink: 0, marginTop: "2px" }} />
+               <span style={{ color: "var(--text-muted)", lineHeight: "1.5", fontSize: "1.05rem" }}><strong style={{ color: "var(--text-main)" }}>Abertura de OS em Segundos:</strong> Tire uma foto da placa e a IA identifica o veículo para você.</span>
+             </motion.li>
+             <motion.li 
+               variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0 } }}
+               transition={{ duration: 0.5 }}
+               style={{ display: "flex", alignItems: "flex-start", gap: "1rem" }}
+             >
+               <MonitorSmartphone size={24} className="card-icon" style={{ flexShrink: 0, marginTop: "2px" }} />
+               <span style={{ color: "var(--text-muted)", lineHeight: "1.5", fontSize: "1.05rem" }}><strong style={{ color: "var(--text-main)" }}>Aprovação Online de Orçamentos:</strong> O cliente recebe o link no WhatsApp e aprova na hora, gerando um comprovante digital seguro.</span>
+             </motion.li>
+             <motion.li 
+               variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0 } }}
+               transition={{ duration: 0.5 }}
+               style={{ display: "flex", alignItems: "flex-start", gap: "1rem" }}
+             >
+               <Receipt size={24} className="card-icon" style={{ flexShrink: 0, marginTop: "2px" }} />
+               <span style={{ color: "var(--text-muted)", lineHeight: "1.5", fontSize: "1.05rem" }}><strong style={{ color: "var(--text-main)" }}>Notas Fiscais sem Retrabalho:</strong> Emita NFC-e (peças) e NFS-e (serviços) direto da OS, com apenas um clique.</span>
+             </motion.li>
+             <motion.li 
+               variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0 } }}
+               transition={{ duration: 0.5 }}
+               style={{ display: "flex", alignItems: "flex-start", gap: "1rem" }}
+             >
+               <Cloud size={24} className="card-icon" style={{ flexShrink: 0, marginTop: "2px" }} />
+               <span style={{ color: "var(--text-muted)", lineHeight: "1.5", fontSize: "1.05rem" }}><strong style={{ color: "var(--text-main)" }}>Estoque Automatizado:</strong> Dê entrada em notas de compra XML rapidamente, com cálculo automático da margem de lucro.</span>
+             </motion.li>
+             <motion.li 
+               variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0 } }}
+               transition={{ duration: 0.5 }}
+               style={{ display: "flex", alignItems: "flex-start", gap: "1rem" }}
+             >
+               <LineChart size={24} className="card-icon" style={{ flexShrink: 0, marginTop: "2px" }} />
+               <span style={{ color: "var(--text-muted)", lineHeight: "1.5", fontSize: "1.05rem" }}><strong style={{ color: "var(--text-main)" }}>Contabilidade no Piloto Automático:</strong> Controle seu caixa e o sistema envia automaticamente as notas e o fechamento do mês para o seu contador todo dia 1º.</span>
+             </motion.li>
+           </motion.ul>
         </div>
 
         <div className="bento-grid">
