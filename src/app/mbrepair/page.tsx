@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
+import { MatrixCursor } from "@/components/matrix-cursor";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { 
   Camera, 
@@ -27,37 +28,14 @@ const IconMap = {
 };
 
 export default function MBRepairPage() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isHovered, setIsHovered] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
   
   const { scrollYProgress } = useScroll();
   const yPos = useTransform(scrollYProgress, [0, 1], [0, 200]);
   const opacityFade = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
-  useEffect(() => {
-    const updateMousePosition = (ev: MouseEvent) => {
-      if (!containerRef.current) return;
-      const { clientX, clientY } = ev;
-      setMousePosition({ x: clientX, y: clientY });
-    };
-    
-    window.addEventListener("mousemove", updateMousePosition);
-    return () => window.removeEventListener("mousemove", updateMousePosition);
-  }, []);
-
   return (
-    <div className="landing-wrapper" ref={containerRef}>
-      {/* Dynamic Mouse Tracker Background Glow */}
-      <motion.div 
-        className="mouse-glow"
-        animate={{
-          x: mousePosition.x - 400,
-          y: mousePosition.y - 400,
-          scale: isHovered ? 1.5 : 1
-        }}
-        transition={{ type: "tween", ease: "backOut", duration: 0.5 }}
-      />
+    <div className="landing-wrapper">
+      <MatrixCursor />
 
       {/* Top Header */}
       <header className="header-nav">

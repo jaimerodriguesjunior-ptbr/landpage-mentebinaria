@@ -1,6 +1,9 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import marketTreeStyles from "@/components/market-tree.module.css";
+import { MarketTree } from "@/components/market-tree";
+import { MatrixCursor } from "@/components/matrix-cursor";
 import { motion } from "framer-motion";
 import { 
   ArrowRight,
@@ -12,25 +15,13 @@ import {
 import { otherProducts } from "@/content/landing-data";
 
 export default function HubPage() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [selectedBusiness, setSelectedBusiness] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
   const showcaseRef = useRef<HTMLDivElement>(null);
 
   const scrollShowcase = (direction: number) => {
     showcaseRef.current?.scrollBy({ left: direction * 340, behavior: "smooth" });
   };
-
-  useEffect(() => {
-    const updateMousePosition = (ev: MouseEvent) => {
-      if (!containerRef.current) return;
-      const { clientX, clientY } = ev;
-      setMousePosition({ x: clientX, y: clientY });
-    };
-    window.addEventListener("mousemove", updateMousePosition);
-    return () => window.removeEventListener("mousemove", updateMousePosition);
-  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -46,15 +37,8 @@ export default function HubPage() {
   }, []);
 
   return (
-    <div className="landing-wrapper" ref={containerRef}>
-      <motion.div 
-        className="mouse-glow"
-        animate={{
-          x: mousePosition.x - 400,
-          y: mousePosition.y - 400,
-        }}
-        transition={{ type: "tween", ease: "backOut", duration: 0.5 }}
-      />
+    <div className="landing-wrapper">
+      <MatrixCursor />
 
       <header className="header-nav">
         <div className="nav-container">
@@ -231,12 +215,12 @@ export default function HubPage() {
         </div>
       </section>
 
-      <section id="mapa-nichos" className="market-map-section scroll-reveal" aria-labelledby="market-map-title">
+      <section id="mapa-nichos" className="market-map-section" aria-labelledby="market-map-title">
         <div className="market-map-card">
           <span className="section-badge">Ecossistema em expansão</span>
           <h2 id="market-map-title">Tecnologia para cada tipo de negócio</h2>
-          <p className="market-map-intro">Escolha um segmento. No futuro, cada caminho levará a um sistema especializado.</p>
-          <div className="market-map-grid">
+          <p className="market-map-intro">Cada ramo, uma nova possibilidade. Explore os segmentos que fazem parte do nosso futuro.</p>
+          <div className={marketTreeStyles["market-map-grid"]}>
             {[
               ["Varejo", ["Calçados", "Roupas", "Presentes", "Eletrônicos", "Tecidos", "Ótica", "Móveis"]],
               ["Alimentação", ["Padaria", "Pastelaria", "Restaurante", "Lanchonete", "Frutaria", "Mercado", "Açougue"]],
@@ -249,12 +233,12 @@ export default function HubPage() {
               ["Serviços", ["Assistência técnica", "Contabilidade", "Gráfica", "Escola", "Fotografia", "Consultoria"]],
               ["Imobiliário", ["Imobiliária", "Corretor", "Administradora", "Condomínios"]],
             ].map(([group, businesses]) => (
-              <div className="market-map-row" key={group as string}>
-                <button type="button" className="market-group">{group as string}</button>
-                <div className="market-branches">
-                  {(businesses as string[]).map((business) => <button type="button" className="market-business" key={business} onPointerDown={() => setSelectedBusiness(business)} onClick={() => setSelectedBusiness(business)}>{business}</button>)}
-                </div>
-              </div>
+              <MarketTree
+                key={group as string}
+                group={group as string}
+                businesses={businesses as string[]}
+                onSelect={setSelectedBusiness}
+              />
             ))}
           </div>
         </div>
